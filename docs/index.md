@@ -15,11 +15,11 @@ graph TD;
     Y -->|Sucesso| D[Salvar no DuckDB];
 ```
 
-<!-- # Contrato de dados
+# Contrato de dados
 
-::: app.schema.ProdutoSchema
+::: app.schema_crm.ProdutoSchemaEmail
 
-# Transformacoes
+<!-- # Transformacoes
 
 ## Configura Variáveis
 
