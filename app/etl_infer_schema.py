@@ -24,7 +24,6 @@ def load_settings():
     }
     return settings
 
-# @pa.check_output(ProdutoSchema, lazy=True)
 def extrair_do_sql(query: str) -> pd.DataFrame:
     """
     Extrai dados do banco de dados SQL usando a consulta fornecida.
@@ -57,4 +56,3 @@ if __name__ == "__main__":
           arquivo.write(schema_crm.to_script())
 
      print(df_crm)
-

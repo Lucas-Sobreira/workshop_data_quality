@@ -3,8 +3,8 @@ from pandera.typing import Series
 
 email_regex = r"[^@]+@[^@]+\.[^@]+"
 
-class ProdutoSchemaEmail(pa.SchemaModel):
-    id_produto: Series[int] = pa.Field(ge=1, le=10)
+class ProdutoSchemaEmail(pa.DataFrameModel):
+    id_produto: Series[int] = pa.Field(ge=1, le=100)
     nome: Series[str]
     quantidade: Series[int] = pa.Field(ge=20, le=200)
     preco: Series[float] = pa.Field(ge=5.0, le=120.0)
@@ -12,5 +12,5 @@ class ProdutoSchemaEmail(pa.SchemaModel):
     email: Series[str] = pa.Field(regex=email_regex)
 
     class Config:
-        coerce = True  # Força conversão de tipos
-        strict = False  # Permite colunas extras
+        coerce = True
+        strict = True
