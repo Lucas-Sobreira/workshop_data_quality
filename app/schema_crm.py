@@ -4,6 +4,9 @@ from pandera.typing import Series
 email_regex = r"[^@]+@[^@]+\.[^@]+"
 
 class ProdutoSchemaEmail(pa.DataFrameModel):
+    """
+    Define o Schema do Database
+    """
     id_produto: Series[int] = pa.Field(ge=1, le=100)
     nome: Series[str]
     quantidade: Series[int] = pa.Field(ge=20, le=200)
@@ -12,5 +15,5 @@ class ProdutoSchemaEmail(pa.DataFrameModel):
     email: Series[str] = pa.Field(regex=email_regex)
 
     class Config:
-        coerce = True
-        strict = True
+        coerce = True # Força conversão de tipos
+        strict = True # Permite colunas extras
